@@ -1,0 +1,18 @@
+.inputOrange{
+    background-color: rgba(243, 196, 93, 0.911);
+    border-radius: 10px ;
+    border-color: darkorange;
+}
+.orangeForm{
+    border: 2px solid #f5a623;
+    border-radius: 100px;
+    padding: 30px;
+    max-width: 400px;
+    height: 755px;
+    box-shadow: 0px 0px 5px 1px rgb(235, 207, 48);
+
+}
+.flex-input-text{
+    display: flex;
+    flex-direction: column;
+}
