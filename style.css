@@ -7,12 +7,41 @@
     border: 2px solid #f5a623;
     border-radius: 100px;
     padding: 30px;
-    max-width: 400px;
-    height: 755px;
-    box-shadow: 0px 0px 5px 1px rgb(235, 207, 48);
-
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0px 0px 10px 1px rgb(235, 207, 48);
+    max-height: 900px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .flex-input-text{
     display: flex;
     flex-direction: column;
+    gap: 5px;
+}
+.flex-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+.Center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.flex-input-label input {
+    height: 20px;
+}
+.selectSize{
+    width: 150px;
+    height: 30px;
+}
+.buttonSize{
+    height: 30px;
+}
+.orangeForm h2{
+    margin: 0;
 }
