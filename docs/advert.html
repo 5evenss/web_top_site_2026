@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Объявления</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="Center">
+
+    <h1>Доска объявлений</h1>
+
+    <form class="orangeForm newsForm">
+        <h2>Создать объявление</h2>
+        <div class="flex-input-text">
+            <label>Введите заголовок</label>
+            <input type="text" id="news_header" class="inputOrange">
+        </div>
+
+        <div class="flex-input-text ">
+            <label>Введите текст объявления</label>
+            <textarea cols="30" rows="5" id="news_text" class="inputOrange"></textarea>
+        </div>
+
+        <div class="flex-input-orange">
+            <label>Загрузите изображение</label>
+            <input type="file" accept="image/*" id="news_image">
+        </div>
+
+        <div class="buttons">
+        <input type="button" value="Создать объявление" class="buttonSize">
+        <input type="reset" value="Очистить форму" class="buttonSize">
+        </div>
+    </form>
+
+    <h2>Объявления</h2>
+    <div class="advert">
+        <h3>Заголовок объявления</h3>
+        <img src="">
+        <p>Продам гараж</p>
+
+    </div>
+
+
+</body>
+</html>

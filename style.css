@@ -45,3 +45,41 @@
 .orangeForm h2{
     margin: 0;
 }
+.newsForm h2{
+    text-align: center;
+}
+.newsForm textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    box-sizing: border-box;
+}
+.buttons{
+    display: flex;
+    gap: 10px;
+    
+}
+.buttons input{
+    flex: 1;
+}
+.advert{
+   border: 2px solid #f5a623;
+    border-radius: 100px;
+    padding: 30px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0px 0px 10px 1px rgb(235, 207, 48);
+    max-height: 900px;
+}
+.advert h3{
+    text-align: center;
+}
+.advert img{
+    width: 100%;
+    border-radius: 9px;
+
+}
+.advert p{
+    margin-top: 14px;
+    text-align: center;
+}
