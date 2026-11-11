@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Объявления</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="script.js" defer></script>
+    
 </head>
 <body class="Center">
+    <button class="themeButton" id="themeButton" onclick="changeTheme()">
+    <span class="themeCircle">☀️</span>
+    </button>
 
     <h1>Доска объявлений</h1>
 
@@ -28,19 +33,117 @@
         </div>
 
         <div class="buttons">
-        <input type="button" value="Создать объявление" class="buttonSize">
+        <input type="button" value="Создать объявление" onclick="f1()" class="buttonSize">
         <input type="reset" value="Очистить форму" class="buttonSize">
         </div>
     </form>
 
     <h2>Объявления</h2>
-    <div class="advert">
-        <h3>Заголовок объявления</h3>
-        <img src="">
-        <p>Продам гараж</p>
-
+    <div id="advertList">
     </div>
+    
+<script>
+    function f1() {
+    let div = document.createElement("div");
+    div.className = "advert";
+
+    let header = document.createElement("h3");
+    header.textContent = document.getElementById("news_header").value;
+
+    let text = document.createElement("p");
+    text.textContent = document.getElementById("news_text").value;
+
+    let foto = document.createElement("img");
+    let file = document.getElementById("news_image").files[0];
+
+    let avtor = document.createElement("p");
+    avtor.textContent= "Автор";
+
+    let date = document.createElement("p");
+    
+
+
+    if (file) {
+    foto.src = URL.createObjectURL(file);
+    div.append(foto);
+    }
+
+    
+
+    div.append(header);
+    div.append(text);
+    div.append(foto);
+    div.append(avtor);
+    
+
+    document.getElementById("advertList").append(div);}
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setCookie(name, value, options = {}) {
+    options = {
+        path: '/',
+        ...options
+    };
+
+    if (options.expires instanceof Date) {
+        options.expires = options.expires.toUTCString();
+    }
+
+    let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+    for (let optionKey in options) {
+        updatedCookie += "; " + optionKey;
+
+        let optionValue = options[optionKey];
+
+        if (optionValue !== true) {
+            updatedCookie += "=" + optionValue;
+        }
+    }
+
+    document.cookie = updatedCookie;
+}
+function deleteCookie(name) {
+    setCookie(name, "", {
+        "max-age": -1
+    });
+}
+
+
+    function changeTheme() {
+    document.body.classList.toggle("dark");
+
+    let circle = document.querySelector(".themeCircle");
+
+    if (document.body.classList.contains("dark")) {
+        circle.textContent = "🌙";
+        setCookie("theme", "dark", {"max-age": 60 * 60 * 24 * 30});
+    } else {
+        circle.textContent = "☀️";
+        setCookie("theme", "light", {"max-age": 60 * 60 * 24 * 30});
+    }
+}
+window.onload = function() {
+    let theme = getCookie("theme");
+
+    if (theme === "dark") {
+        document.body.classList.add("dark");
+
+        let circle = document.querySelector(".themeCircle");
+        circle.textContent = "🌙";
+    }
+};
+
+    </script>
 
 
 </body>
+
 </html>

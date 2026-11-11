@@ -70,6 +70,7 @@
     max-width: 90%;
     box-shadow: 0px 0px 10px 1px rgb(235, 207, 48);
     max-height: 900px;
+    margin-bottom: 15px;
 }
 .advert h3{
     text-align: center;
@@ -82,4 +83,43 @@
 .advert p{
     margin-top: 14px;
     text-align: center;
+}
+
+.themeButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 90px;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    background-color: #f5a623;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.themeCircle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    font-size: 22px;
+    transition: 0.3s;
+}
+body.dark {
+    background-color: #222;
+    color: white;
+}
+
+.dark .themeButton {
+    background-color: #454c67;
+}
+
+.dark .themeCircle {
+    transform: translateX(45px);
+    background-color: #6675ae;
 }
