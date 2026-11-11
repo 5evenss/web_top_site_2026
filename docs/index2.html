@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="script.js" defer></script>
 </head>
 <body class="Center">
+    <form name="registr">
 
     <div class="orangeForm">
     <ul>
@@ -28,13 +30,13 @@
     <div class="flex-input-text">
     <div>Как Вам удобно получить ответ:</div>
     <label for="c_mail">
-    <input type="radio" name="com_tion" id="c_mail"> по почте </label>
+    <input type="radio" name="com_tion" id="c_mail" value="по почте"> по почте </label>
     <label for="c_tel">
-    <input type="radio" name="com_tion" id="c_tel"> по телефону 
+    <input type="radio" name="com_tion" id="c_tel" value="по телефону"> по телефону 
 
     </label>
     <label for="c_none">
-    <input type="radio" name="com_tion" id="c_none"> не нужно отвечать
+    <input type="radio" name="com_tion" id="c_none" value="не нужно отвечать"> не нужно отвечать
     </label>
     </div>
         <div>
@@ -73,9 +75,44 @@
         <div>
         <textarea cols="50"  ></textarea> 
         <div class="Center">
-            <input type="submit" value="отправить вопрос" class="inputOrange buttonSize">
+            <input type="button" value="отправить вопрос" class="inputOrange buttonSize" onclick="f1()">
         </div>
         </div>
 </div>
+</form>
+<script>
+    function f1() {
+    let login = document.forms[0].example.value;
+    let email = document.forms[0].email.value;
+    let tel = document.forms[0].telephn.value;
+
+    console.log("Данные из полей: " + login + " " + email + " " + tel);
+
+    var com_tion = "Не выбрано";
+
+    for (let i = 0; i < document.forms[0].com_tion.length; i++) {
+        if (document.forms[0].com_tion[i].checked) {
+            com_tion = document.forms[0].com_tion[i].value;
+        }
+    }
+
+    console.log("Данные из переключателей: " + com_tion);
+
+    var index = document.forms[0].theme.selectedIndex;
+    var theme_en = document.forms[0].theme[index].value;
+    var theme_ru = document.forms[0].theme[index].text;
+
+    console.log("Данные из выпадающего списка: " + index + " " + theme_en + " " + theme_ru);
+
+    var chb1 = document.forms[0].chb1.checked;
+    console.log("Первый checkbox: " + chb1);
+}
+
+document.forms[0].addEventListener('submit', function(event){
+    event.preventDefault();
+    console.log("Отправка заблокирована JS");
+});
+    
+</script>
 </body>
 </html>
